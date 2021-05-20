@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+      body {
+        display: flex;
+        flex-direction: row-reverse;
+      }
+    </style>
+  </head>
+  <body>
+      <div class="alert alert-primary alert-dismissible fade show" role="alert">
+          
+          <strong>Bảng Điểm</strong> 
+      </div>
+    <div class="form-group" style="width: 400px; margin: 0 auto;">
+      <label for="">Nhập Tên:</label>
+        <input type="text" name="" id="name" class="form-control" placeholder="" aria-describedby="helpId">
+      <label for="">Nhập Điểm Tích Luỹ:</label>
+        <input type="number" name="" id="class" class="form-control" placeholder="" aria-describedby="helpId">
+      <label for="">Chọn Giới Tính:</label>
+        <select class="form-control" name="" id="genders" value="">
+            <option value=""></option>
+            <option value="Nam">Nam</option>
+            <option value="Nữ">Nữ</option>
+        </select>
+        <label for="">Nhập Điểm Toán:</label>
+        <input type="number" name="" id="Toan" class="form-control" placeholder="" aria-describedby="helpId">
+        <label for="">Nhập Điểm Lý:</label>
+        <input type="number" name="" id="Ly" class="form-control" placeholder="" aria-describedby="helpId">
+        <input type="reset" name="" id="button" class="btn btn-primary" btn-lg btn-block" value="IN RA">
+    </div>
+    <div class="btn" style="display: grid">
+        <button type="button" class="btn btn-primary">Sắp Xếp từ nhỏ đến lớn</button>
+        <button type="button" class="btn btn-primary">Sắp Xếp từ Lớn đến nhỏ</button>
+        <button type="button" class="btn btn-primary">Sinh viên nữ có điểm tích luỹ > 5.0</button>
+        <button type="button" class="btn btn-primary">Sinh Viên có điểm lý hoặc toán > 8.0</button>
+        <button type="button" class="btn btn-primary">Sinh Viên có điểm môn toán Cao nhất và Thấp nhất</button>
+        <button type="button" class="btn btn-primary">Xoá sinh viên có điểm tích luỹ là 0</button>
+        <button type="button" class="btn btn-primary">Thêm 3 Sinh viên vào Danh sách</button>
+    </div>
+    
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Họ Và Tên</th>
+                <th>Điểm Tích Luỹ</th>
+                <th>Giới Tính</th>
+                <th>Môn</th>
+                <th>Điểm</th>
+
+            </tr>
+        </thead>
+        <tbody id="main">
+            <tr>
+                <td scope="row"></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <script src="vudu1.js"></script>
+  </body>
+</html>
+
+
