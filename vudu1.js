@@ -91,38 +91,42 @@ document.addEventListener(
       DeleteTichLuy0(studentsJson);
     };
     function renderVal(studentsJson) {
-      var data = '';
-      studentsJson.map((value) => {
-        data += `<tr>
+      if (studentsJson) {
+        var data = '';
+        studentsJson.map((value) => {
+          data += `<tr>
                         <td>${value.name}</td>
                         <td>${value.mark}</td>
                         <td>${value.gender}</td>
                         <td>${value.subjects[0].name} , ${value.subjects[1].name}</td>
                         <td>${value.subjects[0].mark} , ${value.subjects[1].mark}</td>
                     </tr>`;
+        });
+      }
 
-        return (main.innerHTML = data);
-      });
+      return (main.innerHTML = data);
     }
     function sortMinMax(studentsJson) {
       const arrayMinMax = [];
       const arrayMinMaxInra = [];
+
       btnCheck[0].onclick = function () {
         for (let i = 0; i < studentsJson.length; i++) {
           arrayMinMax.push(Number(studentsJson[i].mark));
           arrayMinMax.sort();
+          console.log(arrayMinMax);
         }
         for (let i = 0; i < arrayMinMax.length; i++) {
-          studentsJson.forEach((value) => {
-            if (arrayMinMax[i] == value.mark) {
-              arrayMinMaxInra.push(value);
-              isCheckMinMax = true;
+          for (let j = 0; j < studentsJson.length; j++) {
+            if (arrayMinMax[i] == studentsJson[j].mark) {
+              arrayMinMaxInra.push(studentsJson[j]);
+              console.log(studentsJson[j]);
               renderVal(arrayMinMaxInra);
             }
-          });
+          }
         }
 
-        console.log(arrayMinMax);
+        // console.log(arrayMinMax);
         console.log(arrayMinMaxInra);
       };
     }
@@ -151,6 +155,8 @@ document.addEventListener(
     }
     function filterGirl(studentsJson) {
       const arrayGirl = [];
+      console.log('ok');
+
       btnCheck[2].onclick = function () {
         for (let i = 0; i < studentsJson.length; i++) {
           if (studentsJson[i].gender == 'Nữ') {
@@ -251,6 +257,12 @@ document.addEventListener(
           console.log(array3Acourse);
           if (array3Acourse.length == 3) {
             renderVal(array3Acourse);
+            sortMinMax(array3Acourse);
+            sortMaxMin(array3Acourse);
+            filterGirl(array3Acourse);
+            filterMath(array3Acourse);
+            filterMathMinMax(array3Acourse);
+            DeleteTichLuy0(array3Acourse);
           }
         }
       };
